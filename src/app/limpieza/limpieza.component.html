@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+
+        <h1>Listado de Limpieza</h1>
+
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success clearfix" *ngFor="let limpieza of limpiezas | async " 
+                    (click)="onSelectProducto(limpieza)" [class.selected]="limpieza === selectedProducto">
+              <span>{{limpieza.name}}</span>
+              <span class="pull-right"><button class="glyphicon glyphicon-erase delete" (click)="deleteProducto(limpieza)"></button></span>
+          </li>
+        </ul>
+
+        <div class="panel panel-default" *ngIf="selectedProducto">
+          <div class = "panel-heading">
+            <h1>Modificar Producto</h1>
+          </div>
+         <div class = "panel-body">        
+           <div class="input-group">
+            <span class="input-group-addon btn-danger" (click)="deleteProducto(selectedProducto)"><i class="glyphicon glyphicon-erase"></i> Borrar</span>
+            <input type="text" class="form-control" placeholder="Producto" aria-describedby="basic-addon1" [(ngModel)]="selectedProducto.name"/>
+            <span class="input-group-addon btn-warning" (click)="saveProducto(selectedProducto)"><i class="glyphicon glyphicon-floppy-save" ></i> Actualizar</span>
+          </div>
+          <br>
+          <button  class="btn btn-md btn-primary btn-block" (click)="cancelar()"><i class="glyphicon glyphicon-remove-sign" ></i> Cancelar</button>
+         </div> 
+        </div>
+
+        <div class="alert alert-success" *ngIf="saveSuccess" >
+            <strong>El producto ha sido dado de alta satisfactoriamente</strong>
+        </div>
+        <div class="alert alert-warning" *ngIf="warningSuccess">
+            <strong>El producto ya existe en el sistema</strong>
+        </div>     
+        
+        <div class="alert alert-danger" *ngIf="dangerSuccess">
+            <strong>Registro eliminado</strong>
+        </div>     
+
+        <div class="panel panel-default">
+          <div class = "panel-heading">
+            <h1>Registrar Producto</h1>
+          </div>
+          <div class = "panel-body">        
+              <form class="form-signin" (submit)="addProducto(name)">
+                  <label for="name" class="sr-only">Nombre</label>
+                  <input #name type="text" id="name" class="form-control" placeholder="Producto" required="" >
+                  
+                  <br>
+                  <button  class="btn btn-md btn-primary btn-block" type="submit"><i class="glyphicon glyphicon-send"></i> Alta Producto</button>
+              </form>
+          </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+  

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+
+        <h1>Lista de la Compra</h1>
+
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success clearfix" *ngFor="let peticion of peticiones | async " 
+                    (click)="onSelectPeticion(peticion)" [class.selected]="peticion === selectedPeticion">
+              <span>{{peticion.name}}</span>
+              <span class="pull-right"><button class="glyphicon glyphicon-erase delete" (click)="deletePeticion(peticion)"></button></span>
+          </li>
+        </ul>
+         <div class="alert alert-warning" *ngIf="warningSuccess">
+            <strong>La petición se ha cursado y pasado al histórico</strong>
+        </div>     
+        
+        <div class="alert alert-danger" *ngIf="dangerSuccess">
+            <strong>La petición se ha cursado</strong>
+        </div>     
+        <div class="panel panel-default" *ngIf="selectedPeticion">
+          <div class = "panel-heading">
+            <h1>Modificar Pendiente</h1>
+          </div>
+         <div class = "panel-body">        
+           <div class="input-group">
+            <span class="input-group-addon btn-warning" (click)="savePeticion(selectedPeticion)"><i class="glyphicon glyphicon-floppy-save" ></i> Actualizar</span>
+            <input type="text" class="form-control" placeholder="Peticion" aria-describedby="basic-addon1" [(ngModel)]="selectedPeticion.name"/>
+            <input #name type="text" id="precio" class="form-control" placeholder="Precio" [(ngModel)]="selectedPeticion.precio" >
+            <select id="centro" class="form-control" placeholder="Centro" [(ngModel)]="selectedPeticion.centro"><option *ngFor="let c of centros | async" [ngValue]="c.name">{{c.name}}</option>
+              </select>
+            <span class="input-group-addon btn-danger" (click)="deletePeticion(selectedPeticion)"><i class="glyphicon glyphicon-erase"></i> Borrar</span>
+          </div>
+          <br>
+          <button  class="btn btn-md btn-primary btn-block" (click)="cancelar()"><i class="glyphicon glyphicon-remove-sign" ></i> Cancelar</button>
+         </div> 
+        </div>
+     
+        </div>
+    </div>
+</div>
+
+  

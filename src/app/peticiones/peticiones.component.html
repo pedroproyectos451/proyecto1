@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+<h1>Peticiones de Productos</h1>
+<div class="grid grid-pad">
+  <!-- Ejemplo de como lanzar a otra página con routerlink 
+    <a *ngFor="let producto of productosDash | async"  [routerLink]="['/detail', producto.name]"  class="col-1-4">-->
+  <a *ngFor="let producto of productosDash | async"  (click)="onSelectProducto(producto)"  class="col-1-4">
+    <div class="module producto">
+      <h4>{{producto.name}}</h4>
+    </div>
+  </a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
