@@ -42,7 +42,7 @@ export const firebaseConfig = {
     authDomain: "xxxx",
     databaseURL: "xxx",
     storageBucket: "xxxx",
-    messagingSenderId: "xxxxyyy"
+    messagingSenderId: "xxxxyyyzzz"
 };
 
 initializeApp(firebaseConfig);
