@@ -38,11 +38,11 @@ import { LimpiezasPeticionesComponent } from './limpiezas-peticiones/limpiezas-p
 import { Historico2Component } from './historico2/historico2.component';
 
 export const firebaseConfig = {
-  apiKey: "xxxx",
-    authDomain: "xxxx",
-    databaseURL: "xxx",
-    storageBucket: "xxxx",
-    messagingSenderId: "xxxx"
+  apiKey: "AIzaSyBbMnupeeioRunOoA4oGAJef9gfJtWLIFo",
+    authDomain: "fir-crud-7739e.firebaseapp.com",
+    databaseURL: "https://fir-crud-7739e.firebaseio.com",
+    storageBucket: "fir-crud-7739e.appspot.com",
+    messagingSenderId: "682094541503"
 };
 
 initializeApp(firebaseConfig);
