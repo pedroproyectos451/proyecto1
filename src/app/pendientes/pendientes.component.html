@@ -24,12 +24,15 @@
           </div>
          <div class = "panel-body">        
            <div class="input-group">
-            <span class="input-group-addon btn-warning" (click)="savePeticion(selectedPeticion)"><i class="glyphicon glyphicon-floppy-save" ></i> Actualizar</span>
+            <span class="input-group-addon btn-danger" (click)="deletePeticion(selectedPeticion)"><i class="glyphicon glyphicon-erase"></i> Borrar</span>
             <input type="text" class="form-control" placeholder="Peticion" aria-describedby="basic-addon1" [(ngModel)]="selectedPeticion.name"/>
             <input #name type="text" id="precio" class="form-control" placeholder="Precio" [(ngModel)]="selectedPeticion.precio" >
-            <select id="centro" class="form-control" placeholder="Centro" [(ngModel)]="selectedPeticion.centro"><option *ngFor="let c of centros | async" [ngValue]="c.name">{{c.name}}</option>
+            <select id="centro" class="form-control" placeholder="Centro" [(ngModel)]="selectedPeticion.centro" required>
+              <!--<option value="noption" disabled>Seleccione centro</option>-->
+              <option *ngFor="let c of centros | async" [ngValue]="c.name">{{c.name}}</option>
               </select>
-            <span class="input-group-addon btn-danger" (click)="deletePeticion(selectedPeticion)"><i class="glyphicon glyphicon-erase"></i> Borrar</span>
+            <span class="input-group-addon btn-warning" (click)="savePeticion(selectedPeticion)"><i class="glyphicon glyphicon-floppy-save" ></i> Actualizar</span>
+            
           </div>
           <br>
           <button  class="btn btn-md btn-primary btn-block" (click)="cancelar()"><i class="glyphicon glyphicon-remove-sign" ></i> Cancelar</button>

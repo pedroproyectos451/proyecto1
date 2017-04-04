@@ -18,9 +18,9 @@
           </div>
          <div class = "panel-body">        
            <div class="input-group">
-            <span class="input-group-addon btn-warning" (click)="saveCentro(selectedCentro)"><i class="glyphicon glyphicon-floppy-save" ></i> Actualizar</span>
-            <input type="text" class="form-control" placeholder="Centro" aria-describedby="basic-addon1" [(ngModel)]="selectedCentro.name"/>
             <span class="input-group-addon btn-danger" (click)="deleteCentro(selectedCentro)"><i class="glyphicon glyphicon-erase"></i> Borrar</span>
+            <input type="text" class="form-control" placeholder="Centro" aria-describedby="basic-addon1" [(ngModel)]="selectedCentro.name"/>
+            <span class="input-group-addon btn-warning" (click)="saveCentro(selectedCentro)"><i class="glyphicon glyphicon-floppy-save" ></i> Actualizar</span>
           </div>
           <br>
           <button  class="btn btn-md btn-primary btn-block" (click)="cancelar()"><i class="glyphicon glyphicon-remove-sign" ></i> Cancelar</button>

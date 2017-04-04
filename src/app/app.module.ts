@@ -35,13 +35,14 @@ import { PescadosPeticionesComponent } from './pescados-peticiones/pescados-peti
 import { LacteosPeticionesComponent } from './lacteos-peticiones/lacteos-peticiones.component';
 import { FrutasPeticionesComponent } from './frutas-peticiones/frutas-peticiones.component';
 import { LimpiezasPeticionesComponent } from './limpiezas-peticiones/limpiezas-peticiones.component';
+import { Historico2Component } from './historico2/historico2.component';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBbMnupeeioRunOoA4oGAJef9gfJtWLIFo",
-    authDomain: "fir-crud-7739e.firebaseapp.com",
-    databaseURL: "https://fir-crud-7739e.firebaseio.com",
-    storageBucket: "fir-crud-7739e.appspot.com",
-    messagingSenderId: "682094541503"
+  apiKey: "xxxx",
+    authDomain: "xxxx",
+    databaseURL: "xxx",
+    storageBucket: "xxxx",
+    messagingSenderId: "xxxx"
 };
 
 initializeApp(firebaseConfig);
@@ -84,7 +85,7 @@ const routes: Routes = [
                   HistoricoComponent, CarnesComponent, PescadosComponent, 
                   LimpiezaComponent, FrutasComponent, LacteosComponent, CarnesPeticionesComponent, 
                   PescadosPeticionesComponent, LacteosPeticionesComponent, FrutasPeticionesComponent, 
-                  LimpiezasPeticionesComponent],
+                  LimpiezasPeticionesComponent, Historico2Component],
   bootstrap: [ AppComponent ],
   providers: [AF,HeroService,HeroSearchService, ProductoService, CentroService, PeticionService, CarneService, LacteoService, LimpiezaService, PescadoService,FVService]
 })

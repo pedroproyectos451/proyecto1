@@ -102,13 +102,26 @@ export class PeticionService {
     }
  
   }*/
+  formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [day, month, year].join('-');
+}
 
   savePeticion(peticion) {
+    //SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
+    //String stringdate = dt.format(Date.now());
     var peticionHistorico = {
         name:peticion.name,
         precio:peticion.precio,
         centro:peticion.centro,
-        fecha:Date.now(),
+        fecha:this.formatDate(Date.now()),
         categoria:peticion.categoria
     };
     this.peticionesHistorico.push(peticionHistorico);
